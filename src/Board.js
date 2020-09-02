@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Square from './Square/Sqaure';
-import { View, Button, Text } from 'react-native';
+import { View, Button, Text, SafeAreaView, ScrollView } from 'react-native';
 
 const winningCombination = [
   [0, 1, 2],
@@ -51,38 +51,95 @@ const Board = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>TicToe</Text>
-      <View style={styles.board}>
-        {board.map((text, id) => (
-          <Square
-            text={text}
-            id={id}
-            key={'square' + id}
-            handleClick={handleClick}
-          />
-        ))}
-      </View>
-      <Text style={styles.title}>
-        {(win === 'X' || win === 'O') && win + ' won the game'}
-        {win === 'T' && 'Game Tie'}
-      </Text>
-      <View style={styles.reset}>
-        <Button title="Restart" onPress={reset} />
-      </View>
-    </View>
+    <>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={styles.board}>
+            <Text style={styles.header}>Tic-Toe</Text>
+            <View style={styles.tiles}>
+              <View>
+                <Square
+                  text={board[0]}
+                  id={0}
+                  key="square-0"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[1]}
+                  id={1}
+                  key="square-1"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[2]}
+                  id={2}
+                  key="square-2"
+                  handleClick={handleClick}
+                />
+              </View>
+              <View>
+                <Square
+                  text={board[3]}
+                  id={3}
+                  key="square-3"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[4]}
+                  id={4}
+                  key="square-4"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[5]}
+                  id={5}
+                  key="square-5"
+                  handleClick={handleClick}
+                />
+              </View>
+              <View>
+                <Square
+                  text={board[6]}
+                  id={6}
+                  key="square-6"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[7]}
+                  id={7}
+                  key="square-7"
+                  handleClick={handleClick}
+                />
+                <Square
+                  text={board[8]}
+                  id={8}
+                  key="square-8"
+                  handleClick={handleClick}
+                />
+              </View>
+            </View>
+          </View>
+          <View>
+            <Text style={styles.title}>
+              {(win === 'X' || win === 'O') && win + ' won the game'}
+              {win === 'T' && 'Game Tie'}
+            </Text>
+            <Button title="Restart" onPress={reset} />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
   );
 };
 
 const styles = {
-  container: {
-    marginVertical: 40,
+  tiles: {
+    flexDirection: 'row',
   },
   board: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   header: {
     textAlign: 'center',
@@ -93,10 +150,6 @@ const styles = {
     textAlign: 'center',
     fontSize: 18,
     marginVertical: 16,
-  },
-  reset: {
-    marginLeft: 20,
-    marginRight: 20,
   },
 };
 
