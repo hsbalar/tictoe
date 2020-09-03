@@ -61,7 +61,3 @@ buck-out/
 # Expo
 .expo/*
 web-build/
-
-
-android
-ios
