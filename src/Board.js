@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Square from './Square/Sqaure';
-import { View, Button, Text, SafeAreaView, ScrollView } from 'react-native';
+import {View, Button, Text, SafeAreaView, ScrollView} from 'react-native';
 
 const winningCombination = [
   [0, 1, 2],
@@ -55,7 +55,6 @@ const Board = () => {
       <SafeAreaView>
         <ScrollView>
           <View style={styles.board}>
-            <Text style={styles.header}>Tic-Toe</Text>
             <View style={styles.tiles}>
               <View>
                 <Square

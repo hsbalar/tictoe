@@ -1,12 +1,4 @@
 {
   "name": "TicToeApp",
-  "displayName": "TicToeApp",
-  "expo": {
-    "name": "TicToeApp",
-    "slug": "TicToeApp",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+  "displayName": "TicToeApp"
 }
