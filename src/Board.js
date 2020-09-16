@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Square from './Square/Sqaure';
+import Square from './Sqaure';
 import {View, Button, Text, SafeAreaView, ScrollView} from 'react-native';
 
 const winningCombination = [
@@ -139,11 +139,6 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  header: {
-    textAlign: 'center',
-    marginVertical: 16,
-    fontSize: 21,
   },
   title: {
     textAlign: 'center',

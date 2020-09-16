@@ -1,17 +1,17 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
+import {Dimensions} from 'react-native';
 
 const DeviceWidth = Dimensions.get('window').width;
 
-const Square = ({ text, id, handleClick }) => {
+const Square = ({text, id, handleClick}) => {
   const squareClick = () => {
     if (text) return;
     handleClick(id);
   };
 
   return (
-    <View style={[styles.square, { opacity: text ? 1 : 0.5 }]}>
+    <View style={[styles.square, {opacity: text ? 1 : 0.5}]}>
       <TouchableOpacity style={styles.tile} onPress={() => squareClick()}>
         <Text style={styles.text}>{text}</Text>
       </TouchableOpacity>
